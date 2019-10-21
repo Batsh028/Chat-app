@@ -1,24 +1,30 @@
 import React from 'react';  
 import './Contact.css';
-import { tsPropertySignature } from '@babel/types';
 
-function Contact (props){
-    return(
+class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          favorite: false,
+        };
+      }
+    render(){ return(
         <div className="Contact">
             <img
-              src={props.img}
-              alt={props.character}
+              src={this.prop.img}
+              alt={this.prop.character}
               className="avatar"/>
               <div className="">
-                    <p className="name"> {props.name} </p>
+                    <p className="name"> {this.prop.name} </p>
 
                     <div className="status">
-                        {props.status ? <span className="status-online" ></span> : <span className=" status-offline" ></span>}
-                        <span className="status-text"> {props.status ? "Online" : "Offline"} </span>
+                        {this.prop.status ? <span className="status-online" ></span> : <span className=" status-offline" ></span>}
+                        <span className="status-text"> {this.prop.status ? "Online" : "Offline"} </span>
                     </div>
                 </div>
       </div>
     );
 }
+}
 
-export default Contact
+export default Contact ;
