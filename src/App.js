@@ -8,8 +8,6 @@ function App() {
   return (
     <div className="App">
       {
-
-
         ContactList.map(item => (
           <Contact name={item.name} img={item.img} status={item.status} />
         ))
